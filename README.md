@@ -25,11 +25,11 @@ one notification.
 ```ruby
 rake availability:check['http://www.bayparcplaza.com']
 ```
-This is the task that you will run on an interval, using [Heroku Scheduler](https://elements.heroku.com/addons/scheduler) or similar. You will receive a Slack notification
+This is the task that you will run on an interval, using [Heroku Scheduler](https://elements.heroku.com/addons/scheduler) or similar. You will receive a Slack notification if a new apartment is available.
 
 ## Setup
 
-Pull and customize this repo. I suggest deploying to Heroku.
+Clone and customize this repo. I suggest deploying to Heroku.
 
 First, you will need a Slack channel to configure. Aimco Scraper uses [Slack Notifier](https://github.com/stevenosloan/slack-notifier) to send messages;
 follow the second half of the [Setting Defaults](https://github.com/stevenosloan/slack-notifier#setting-defaults) section, where you set up an incoming webhook for your Slack channel. Set the webhook URL you receive:
