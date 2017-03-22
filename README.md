@@ -2,6 +2,8 @@
 
 This tool will notify you via Slack when there are any new available apartments for an Aimco apartment complex of your choosing. Perfect for when you want to be the first one to snatch up a newly available apartment!
 
+![](/app/assets/images/aimco-scraper.png)
+
 ## Usage
 
 Locate the Aimco property's website domain. For example, if you wanted to follow availability for The [Bay Parc Plaza apartments](http://www.bayparcplaza.com/) you would use `http://www.bayparcplaza.com` (no trailing slash!)
@@ -36,8 +38,13 @@ follow the second half of the [Setting Defaults](https://github.com/stevenosloan
 export AIMCO_SLACK_WEBHOOK_URL="your_webhook_url"
 ```
 
-Make sure to set it to the Heroku env vars.
+Make sure to set it to the Heroku config variables (ENV vars).
 
 Next, run the tasks; first `heroku run rake availability:load`, and then `heroku run rake availability:test` to make sure it is working properly. If you receive the message but do not receive a notification, check your Slack notification settings.
 
 If it works, set up the [Heroku Scheduler](https://elements.heroku.com/addons/scheduler) next, having it run `rake availability:check` every hour (make sure to add your domain to these commands!)
+
+## Todo
+
+* Make a frontend possibly - not sure what this might give you over checking the actual availability page
+* Add `domain` to `Apartment`, in case you want to check multiple properties at once
