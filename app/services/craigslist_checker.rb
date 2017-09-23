@@ -54,10 +54,7 @@ class CraigslistChecker
     doc.css('.result-row[data-pid]').map do |result|
       {
         result.attributes['data-pid'].value =>
-        [
-          domain,
-          result.children[1].attributes['href'].value
-        ].join
+        result.children[1].attributes['href'].value
       }
     end
   end
